@@ -1,0 +1,12 @@
+Run Application as:
+java com.lu.wang.snakecharmer.SnakeCharmerApp <inputFile> <outputFile> <1=TravelAlgorithm other=DijkstraAlgorithm>
+
+During implementation, I found 2 algorithms to solve the issue.
+1. Dijkstra Algorithm, which can be found in https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm. This algorithm is basically calculate the shortest path for all nodes when init, and then user can asking any node on the map for the shortest path.
+2. Travel Algorithm (i made this name), this is based on the study of the map/question, the shortest way is move ordinal direction towards to the destination and then cardinal direction.
+
+Unit test are created for both algorithm.
+Also a intergraton test are done to run the same destination node, and check if both total movement number is the same.
+
+In general, Travel Algorithm will have fast performance, however Dijkstra Algorithm is more scalable.
+
