@@ -63,6 +63,10 @@ public class DijkstraAlgorithm implements MovementInterface {
 		}
 	}
 
+	/**
+	 * Find the minimal distance from source of all neighbors of specified nodes.
+	 * @param node node
+	 */
 	private void findMinimalDistances(Node node) {
 		for (Node target : getNeighbors(node)) {
 			if (getShortestDistance(target) > getShortestDistance(node) + WEIGHT) {
@@ -141,6 +145,11 @@ public class DijkstraAlgorithm implements MovementInterface {
 		return neighbors;
 	}
 
+	/**
+	 * Find the node in specified node list with the minimum distances from source. 
+	 * @param nodes node list
+	 * @return the node in specified node list with the minimum distances from source. 
+	 */
 	private Node getMinimum(Set<Node> nodes) {
 		Node minimum = null;
 		for (Node node : nodes) {

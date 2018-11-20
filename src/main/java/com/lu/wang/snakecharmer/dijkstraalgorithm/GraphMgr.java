@@ -25,6 +25,15 @@ public class GraphMgr {
 		graph = new Graph();
 	}
 
+	/**
+	 * init the graph with specified xy ranges.
+	 * 
+	 * @param fromX
+	 * @param fromY
+	 * @param toX
+	 * @param toY
+	 * @return graph with specified xy ranges.
+	 */
 	public Graph init(int fromX, int fromY, int toX, int toY) {
 		// Reorder from x,y and to x,y so they are in increase order.
 		int x1 = fromX;
@@ -55,6 +64,15 @@ public class GraphMgr {
 		return graph;
 	}
 
+	/**
+	 * init nodes with specified xy ranges.
+	 * 
+	 * @param fromX
+	 * @param fromY
+	 * @param toX
+	 * @param toY
+	 * @return
+	 */
 	private Hashtable<String, Node> initNodes(int fromX, int fromY, int toX, int toY) {
 		Hashtable<String, Node> nodes = new Hashtable<String, Node>();
 		for (int i = fromX; i <= toX; i++) {
@@ -65,6 +83,15 @@ public class GraphMgr {
 		return nodes;
 	}
 
+	/**
+	 * init paths with specified xy ranges.
+	 * 
+	 * @param fromX
+	 * @param fromY
+	 * @param toX
+	 * @param toY
+	 * @return paths with specified xy ranges.
+	 */
 	private Collection<Path> initPaths(Hashtable<String, Node> nodes) {
 		ArrayList<Path> paths = new ArrayList<Path>();
 		for (Node node : nodes.values()) {
@@ -93,6 +120,13 @@ public class GraphMgr {
 		return paths;
 	}
 
+	/**
+	 * Get the key which used to store nodes in the hash table.
+	 * 
+	 * @param x x
+	 * @param y y
+	 * @return the key which used to store nodes in the hash table.
+	 */
 	public static String getKey(int x, int y) {
 		return "[" + x + "," + y + "]";
 	}
